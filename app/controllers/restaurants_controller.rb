@@ -32,7 +32,6 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @avgrating = @restaurant.avgrating(@restaurant)
-    @current_user=current_user
   end
 
   def edit

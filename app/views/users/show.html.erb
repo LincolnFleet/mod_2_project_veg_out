@@ -9,6 +9,8 @@
     Member Since: <%= @user.created_at %><br>
 </ul><br>
 
+<%= button_to 'Edit Your Profile', edit_user_path(@user), method: :get%><br>
+
 <h3 class="title is-size-4">Most Recent Review:</h3>
   <%if @most_recent_review != nil %>
   <p>Restaurant: <%= @most_recent_review.restaurant.name%></p>

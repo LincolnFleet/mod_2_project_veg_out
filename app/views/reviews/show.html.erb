@@ -10,6 +10,6 @@
     <ul><%=@review.favorite_dish%></ul>
     
 <% if @current_user.id == @review.user_id %>
-    <%=link_to 'Edit your post', edit_review_path(@review)%>
-    <%=button_to 'Delete this post', review_path(@review), :method => :delete%>
+    <%=button_to 'Edit your post', edit_review_path(@review), method: :get%>
+    <%=button_to 'Delete this post', review_path(@review), method: :delete%>
 <%end%>

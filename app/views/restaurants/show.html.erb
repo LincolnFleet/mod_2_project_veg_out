@@ -18,9 +18,9 @@
 <h3>Description:</h3>
   <p><%= @restaurant.description %></p>
 
-<h3>Rating: <%= @avgrating%>/5</h3>
+<h3>Average Rating: <%= @avgrating%>/5</h3>
 
-<%= link_to "Create a Review For This Restaurant", review_restaurant_path(@restaurant)%>
+<%= button_to "Create a Review For This Restaurant", review_restaurant_path(@restaurant), method: :get%>
 <h3>Reviews:</h3>
 
   <% @restaurant.reviews.each do |review| %>
@@ -30,7 +30,7 @@
 
 
 
-<% if @current_user.id == @restaurant.owner_id %>
-  <%=link_to 'Edit This Restaurant', edit_restaurant_path(@restaurant)%>
-  <%=button_to 'Delete This Restaurant', restaurant_path(@restaurant), :method => :delete%>
+<% if session[:user_id] == @restaurant.owner_id %>
+  <%=button_to 'Edit This Restaurant', edit_restaurant_path(@restaurant), method: :get%>
+  <%=button_to 'Delete This Restaurant', restaurant_path(@restaurant), method: :delete%>
 <%end%>

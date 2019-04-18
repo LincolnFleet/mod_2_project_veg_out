@@ -7,6 +7,6 @@
 <p><%= @menu_item.description%></p>
 
 <% if (@current_user.id == @menu_item.user_id) || (@current_user.id == @restaurant.owner_id) %>
-    <%= button_to('Update', edit_menu_item_path(@menu_item), method: "get") %>
-    <%= button_to('Remove from Menu', menu_item_path(@menu_item), method: "delete", remote: true, data: { confirm: 'Are you sure?'}) %>
+    <%= button_to('Update', edit_menu_item_path(@menu_item), method: :get) %>
+    <%= button_to('Remove from Menu', menu_item_path(@menu_item), method: "delete", remote: true, data: { confirm: 'Are you sure you wish to delete this menu item?'}) %>
 <%end%>

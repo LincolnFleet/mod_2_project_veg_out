@@ -65,5 +65,5 @@
     </tr>
   </tbody>
 </table><br>
-<%= link_to "Add to the Menu", add_menu_item_path(@restaurant)%><br>
+<%= button_to "Add to the Menu", add_menu_item_path(@restaurant), method: :get%><br>
 <%= link_to "Back to Restaurant", restaurant_path(@restaurant)%>
